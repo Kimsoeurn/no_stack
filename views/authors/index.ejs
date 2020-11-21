@@ -1,0 +1,30 @@
+<div class="container">
+    <h3>Search Authors</h3>
+    <form action="/authors" method="get">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="<%= q %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th style="width: 20%;">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% authors.forEach(author => { %>
+                <tr>
+                    <td><%= author._id %> </td>
+                    <td><%= author.name %> </td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info">Edit</a>
+                    </td>
+                </tr>
+            <% }) %> 
+        </tbody>
+    </table>
+</div>
